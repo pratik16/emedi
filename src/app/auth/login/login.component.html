@@ -1,3 +1,4 @@
+test login
 <div class="center">
     <div class="col-xs-7">
         <div class="login-register-form register-form">
@@ -6,35 +7,29 @@
 
             <form [formGroup]="registerForm" (ngSubmit)="doRegister($event)">
                 <div class="form-group">
-                    <input type="email" class="form-control" placeholder="Enter Email Address"
-                        formControlName="email">
-                    <control-messages [name]="'Email address'"
-                        
-                        [control]="registerForm.controls.email"></control-messages>
+                    <input type="email" class="form-control" placeholder="Enter Email Address" formControlName="email">
+                    <control-messages [name]="'Email address'" [control]="registerForm.controls.email"></control-messages>
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control" placeholder="Enter Password"
-                        formControlName="password">
-                    <control-messages [name]="'Password'" 
-                        [control]="registerForm.controls.password"></control-messages>
+                    <input type="password" class="form-control" placeholder="Enter Password" formControlName="password">
+                    <control-messages [name]="'Password'" [control]="registerForm.controls.password"></control-messages>
                 </div>
-               
 
-                <http-message *ngIf="registerError" [type]="'error'" [data]="registerError"></http-message> 
+
+                <http-message *ngIf="registerError" [type]="'error'" [data]="registerError"></http-message>
                 <div class="form-group buttons">
-                    <button color="warn" mat-raised-button (click)="doRegister($event)" type="button"
-                        *ngIf="!loading_register">Login</button>
-                    
+                    <button color="warn" mat-raised-button (click)="doRegister($event)" type="button" *ngIf="!loading_register">Login</button>
+
                 </div>
                 <div class="row">
                     <div class="col-18">
-                        <div>New to HealthBook? <a color="primary"
-                                mat-button> Registration </a></div>
+                        <div>New to HealthBook? <a color="primary" routerLink="/auth/registration" mat-button> Registration </a></div>
                     </div>
                 </div>
 
             </form>
-    
+
+        </div>
+
     </div>
-   
 </div>

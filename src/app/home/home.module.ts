@@ -8,6 +8,7 @@ import { ImageplaceholderDirective } from '../share/directives/imageplaceholder.
 import { ProductListingComponent } from './product-listing/product-listing.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { ProductSearchComponent } from './product-search/product-search.component';
+import { MaterialModule } from '../material/material.module';
 
 
 @NgModule({
@@ -22,7 +23,11 @@ import { ProductSearchComponent } from './product-search/product-search.componen
   ],
   imports: [
     CommonModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    MaterialModule
+  ],
+  providers : [
+    
   ]
 })
 export class HomeModule { }

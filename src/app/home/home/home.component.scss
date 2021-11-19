@@ -1,5 +1,5 @@
 .carousel {
-	padding-top: 50px;
+    padding-top: 50px;
 }
 
 .container {
@@ -18,12 +18,14 @@
 .main-cat-col {
     height: 200px;
 }
+
 .left-cat-list {
     cursor: pointer;
     a {
         color: black;
     }
 }
+
 .card {
     background: #fff;
     box-shadow: 6 6px 10px rgba(0, 0, 0, .08), 0 0 6px rgba(0, 0, 0, .05);
@@ -56,6 +58,7 @@
 .card h2 {
     font-size: 1rem
 }
+
 .main-cat-title {
     text-align: center;
 }
@@ -82,5 +85,15 @@ main .card:hover {
         text-align: center;
         width: 100%;
         margin-bottom: 10px;
+    }
+}
+
+
+/* ============================================== */
+
+@media screen and (min-width: 320px) and (max-width:568px) {
+    /* ADD YOUR CSS ADJUSTMENTS BELOW HERE */
+    .col-md-auto {
+        display: none;
     }
 }
