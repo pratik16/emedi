@@ -1,0 +1,20 @@
+<div class="center">
+    <div class="col-xs-7">
+        <a href="{{ productDetail.img }}" target="_blank"><img class="product-detail-img" src="{{ productDetail.img }}"></a>
+    </div>
+    <div class="col-xs-5 product-title">
+        <h1>{{ productDetail.name }}</h1>
+        <h4>SKU #{{ productDetail.sku }}</h4>
+
+        <br />
+        <div [innerHTML]="productDetail.description"></div>
+
+        <hr>
+
+        <div class="card-body">
+            <!--<a href="#" class="btn btn-primary product-btn">Call us on 91-6351500990</a>-->
+            <a class="btn btn-primary">Call us on 91-6351500990</a>
+        </div>
+    </div>
+   
+</div>

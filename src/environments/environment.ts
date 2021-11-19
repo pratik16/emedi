@@ -3,9 +3,15 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  env: 'local',
+  production: false,
+  deployUrl: 'angular',
+  api_url:'http://testdev.won.world/api/'
+ // api_url:'https://prodv.won.world/api/'
+ //api_url:'https://www.won.world/api/'
 };
-
+//http://testdev.won.world/wonworld/auth/login
+//https://www.won.world
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.

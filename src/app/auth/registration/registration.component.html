@@ -1,0 +1,114 @@
+<div class="center">
+    <div class="col-xs-7">
+        <div class="login-register-form register-form">
+            <h2>Registration</h2>
+            <p class="description">Be cool and join today.</p>
+
+            <form [formGroup]="registerForm" (ngSubmit)="doRegister($event)">
+                <div class="form-group row">
+                    <div class="col-6 first-field">
+                        <input type="text" name="first_name" class="form-control"
+                            placeholder="Enter First name" formControlName="first_name" value="">
+                    </div>
+                    <div class="col-6 last-field">
+                        <input type="text" name="last_name" class="form-control"
+                            placeholder="Enter Last name" formControlName="last_name" value="">
+                    </div>
+                    <div class="col-12">
+                        <control-messages [name]="'First name'"
+                            
+                            [control]="registerForm.controls.first_name"></control-messages>
+                        <control-messages [name]="'Last name'"
+                            
+                            [control]="registerForm.controls.last_name"></control-messages>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control" placeholder="Enter Email Address"
+                        formControlName="email">
+                    <control-messages [name]="'Email address'"
+                        
+                        [control]="registerForm.controls.email"></control-messages>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Enter Password"
+                        formControlName="password">
+                    <control-messages [name]="'Password'" 
+                        [control]="registerForm.controls.password"></control-messages>
+                </div>
+                <div class="form-group row">
+                    <div class="col-12">
+                        <input class="form-control" type="password" placeholder="Confirm Password"
+                            formControlName="password_confirmation">
+                        <control-messages [name]="'Confirm Password'"
+                            
+                            [control]="registerForm.controls.password_confirmation">
+                        </control-messages>
+                    </div>
+                </div>
+                
+             
+                <div class="form-group">
+                    <select class="form-control" placeholder="Select country"
+                        formControlName="country_id">
+                        <option [value]="null">Select Country</option>
+                        <option *ngFor="let country of countries" [value]="country.id">
+                            {{country.name}} (+{{country.phone_code}})</option>
+                    </select>
+                    <control-messages [name]="'Country'" [type]="'select'"
+                        [control]="registerForm.controls.country_id"></control-messages>
+                </div>
+
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Enter Mobile No"
+                        formControlName="phone">
+                    <div class="col-12">
+                        <control-messages [name]="'Mobile No'"
+                            
+                            [control]="registerForm.controls.phone"></control-messages>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-12">
+                        <label>Gender &nbsp; &nbsp;</label>
+                        <mat-radio-group formControlName="gender">
+                            <mat-radio-button color="primary" value="male">Male</mat-radio-button>
+                            &nbsp; &nbsp; &nbsp;
+                            <mat-radio-button color="primary" value="female">Female
+                            </mat-radio-button>
+                        </mat-radio-group>
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <mat-checkbox color="primary" formControlName="term"> I accept <a
+                            href="javascript:" color="primary" (click)="$event.stopPropagation();">
+                            Terms & Condition</a> and <a href="javascript:" color="primary"
+                            (click)="$event.stopPropagation();">Privacy
+                            Policy</a>. </mat-checkbox>
+
+                    <control-messages
+                        [name]="'Please accept <b>Terms & Condition</b> and <b>Privacy Policy</b>.'"
+                        [type]="'agree'" 
+                        [control]="registerForm.controls.term"></control-messages>
+                </div>
+
+                <http-message *ngIf="registerError" [type]="'error'" [data]="registerError"></http-message> 
+                <div class="form-group buttons">
+                    <button color="warn" mat-raised-button (click)="doRegister($event)" type="button"
+                        *ngIf="!loading_register">Register Now</button>
+                    
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div>Registered with HealthBook? <a color="primary"
+                                mat-button> Login </a></div>
+                    </div>
+                </div>
+
+            </form>
+    
+    </div>
+   
+</div>

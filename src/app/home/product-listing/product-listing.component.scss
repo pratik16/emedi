@@ -1,0 +1,64 @@
+.carousel {
+	padding-top: 50px;
+}
+.container {
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+.col-md-auto {
+    max-width: 250px;
+}
+.left-cat-list {
+    cursor: pointer;
+    a {
+        color: black;
+    }
+}
+
+.card {
+    background: #fff;
+    box-shadow: 6 6px 10px rgba(0, 0, 0, .08), 0 0 6px rgba(0, 0, 0, .05);
+    transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
+    border: 1;
+    border-radius: 1rem;
+}
+
+.card-img-top {
+    border-top-left-radius: calc(1rem - 1px);
+    border-top-right-radius: calc(1rem - 1px);
+    height: 150px;
+
+    width: 100%;
+    max-height: 180px;
+    object-fit: contain;
+    padding: 30px
+}
+
+.card h2 {
+    font-size: 1rem
+}
+
+main .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
+    cursor: pointer;
+}
+
+.card-product {
+    width: 25%;
+    margin: 10px;
+    text-decoration: none;
+    color: black;
+    .card-title {
+        text-align: center;
+        height: 45%;
+    }
+    .card-img-top {
+        height: 50%;
+    }
+    .product-btn {
+        text-align: center;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}

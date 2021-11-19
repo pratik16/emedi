@@ -1,0 +1,79 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary-color header-height nav-fill fixed-top">
+  <ul class="nav">
+    <li class="nav-item nav-item-inline">
+      <img src="/assets/Emlogo_a.png" height="40px" class="logo-img" />
+    </li>
+    <li class="nav-item nav-item-inline nav-brand-title">
+      <a class="navbar-brand" href="#">EMedimarket</a>
+    </li>
+  </ul>
+
+
+
+
+  <form class="form-inline-class nav">
+    <input class="form-control form-textbox nav-item navitem-search" placeholder="Search any product" #searchText>
+    <button class="btn btn-outline-success nav-item" type="button" (click)="onSearch(searchText.value)">Search</button>
+  </form>
+
+  <ul class="nav bottom-nav-right" *ngIf="isLoggedIn == false">
+    <li class="nav-item nav-item-inline">
+      &nbsp;
+    </li>
+    <li class="nav-item nav-item-inline">
+      &nbsp;
+    </li>
+  </ul>
+
+  <ul class="nav bottom-nav-rights" *ngIf="isLoggedIn == true">
+    <li class="nav-item nav-item-inline">
+      &nbsp;
+    </li>
+    <li class="nav-item nav-item-inline">
+      &nbsp;
+    </li>
+  </ul>
+
+  <ul class="nav bottom-nav-right" *ngIf="isLoggedIn == false">
+    <li class="nav-item nav-item-inline">
+      <a class="nav-link" routerLink="/login">Login</a>
+    </li>
+    <li class="nav-item nav-item-inline">
+      <a class="nav-link" href="#">Create an account</a>
+    </li>
+  </ul>
+
+  <ul class="nav bottom-nav-rights" *ngIf="isLoggedIn == true">
+    <li class="nav-item nav-item-inline">
+      <a class="nav-link" href="#" (click)="doLogout()">Logout</a>
+    </li>
+    <li class="nav-item nav-item-inline">
+      &nbsp;
+    </li>
+  </ul> 
+</nav>
+
+
+
+
+<section class="market-layout-content">
+  <router-outlet></router-outlet>
+</section>
+<div class="nav-bottom">
+  <nav class="navbar fixed-bottom bg-primary-color justify-content-center">
+    <ul class="nav bottom-nav-right">
+      <li class="nav-item nav-item-inline">
+        <a class="nav-link" target="_blank" href="https://www.won.world/">Healthbook</a>
+      </li>
+      <li class="nav-item nav-item-inline">
+        <a class="nav-link"  target="_blank" href="http://seller.emedimarket.com/">EMedimarket</a>
+      </li>
+      <li class="nav-item">
+        <mat-icon class="nav-link phone-color">phone</mat-icon>
+      </li>
+      <li class="nav-item nav-item-inline phone-text">
+        <a class="nav-link" href="#">91-9825826658</a>
+      </li>
+    </ul>
+  </nav>
+</div>

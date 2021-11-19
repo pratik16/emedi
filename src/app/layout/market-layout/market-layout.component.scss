@@ -1,0 +1,118 @@
+.header-height {
+    height: 50px;
+}
+
+.bg-primary-color {
+    background-color: #D12A2A;
+}
+
+.navbar {
+    padding-left: 20px;
+    justify-content: space-between;
+}
+
+.logo-img {
+    padding-right: 10px;
+}
+
+.header-search {
+    width: 250px;
+}
+
+.form-inline-class {
+    display: inline-flex;
+}
+
+.form-textbox {
+    width: 350px;
+    margin-right: 10px;
+}
+
+.navitem-search {
+	text-align: left;
+}
+
+.nav-brand-title {
+	padding-top: 5%;
+}
+
+
+.nav-link {
+    color: #FFFFFF;
+}
+
+.nav-link-bottom {
+    color: #fff;
+    text-decoration: none;
+}
+
+.phone-color {
+    color: #FFFFFF;
+}
+
+.fixed-bottom {
+    height: 5%;
+}
+
+.nav-bottom {
+    .justify-content-center {
+        padding-top: 0;
+    }
+}
+.btn-outline-success {
+	color: blanchedalmond;
+	border-color:blanchedalmond;
+}
+
+
+/*Login page*/
+/* STRUCTURE */
+.card-login {
+    width:40%;
+    height:40%;
+    position: fixed;
+    background-color: #fff;
+    border-radius: 20px;
+    margin-top: 10%;
+    border: solid 1px #cfcfcf;
+    .card-body {
+        text-align: center;
+    }
+    h5 {
+        float: right;
+    }
+    .form-control {
+        margin-top: 10px;
+    }
+    .close {
+        float: right;
+        border: none;
+        margin-right: 10px;
+        
+    }
+
+    .product-btn {
+        margin-top: 5%;
+        width: 30%;
+        text-align: center;
+    }
+
+    .form-control{
+        font-size: 14px;
+        border-radius: 30px;
+        border: solid 1px #cfcfcf;
+        padding: 10px 16px;
+        line-height: normal;
+        height: auto;
+    }
+
+    .close-btn {
+        margin-left: 10%;
+        cursor: pointer;
+    }
+
+    .market-layout-content > p {
+        margin-top: 300px;
+    }
+
+  }
