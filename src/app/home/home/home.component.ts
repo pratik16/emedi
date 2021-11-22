@@ -3,6 +3,7 @@ import { CategoryService } from 'src/app/services/category.service';
 import { map, concatAll } from 'rxjs/operators';
 import { ProductService } from 'src/app/services/product.service';
 
+declare var $: any;
 
 @Component({
   selector: 'app-home',
@@ -59,7 +60,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngAfterViewChecked() {
-   // $('.carousel').carousel();
+   $('.carousel').carousel();
   }
 
   fetchMore($event:any) {
