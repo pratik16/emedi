@@ -5,14 +5,14 @@ test login
             <h2>Registration</h2>
             <p class="description">Be cool and join today.</p>
 
-            <form [formGroup]="registerForm" (ngSubmit)="doRegister($event)">
+            <form [formGroup]="loginForm" (ngSubmit)="doRegister($event)">
                 <div class="form-group">
                     <input type="email" class="form-control" placeholder="Enter Email Address" formControlName="email">
-                    <control-messages [name]="'Email address'" [control]="registerForm.controls.email"></control-messages>
+                    <control-messages [name]="'Email address'" [control]="loginForm.controls.email"></control-messages>
                 </div>
                 <div class="form-group">
                     <input type="password" class="form-control" placeholder="Enter Password" formControlName="password">
-                    <control-messages [name]="'Password'" [control]="registerForm.controls.password"></control-messages>
+                    <control-messages [name]="'Password'" [control]="loginForm.controls.password"></control-messages>
                 </div>
 
 
@@ -28,6 +28,8 @@ test login
                 </div>
 
             </form>
+
+            <mat-progress-spinner *ngIf="flag" mode="indeterminate"></mat-progress-spinner>
 
         </div>
 

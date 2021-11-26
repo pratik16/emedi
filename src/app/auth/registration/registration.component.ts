@@ -48,20 +48,20 @@ export class RegistrationComponent implements OnInit {
 			this.loading_register = true;
 			let args = this.registerForm.value;
 			//args.password_confirmation = args.password;
-		/*	this.userService.register(args).subscribe((data: any) => {
+			this.userService.register(args).subscribe((data: any) => {
         let success = data.json();
         console.log(success);
-				/*this.user = success.data;
-				this.auth.setUser(this.user, false);
-				this.loading_register = false;
-				this.setActiveForm('login');
+				// this.user = success.data;
+				// this.auth.setUser(this.user, false);
+				// this.loading_register = false;
+				// this.setActiveForm('login');
 
 			}, (error:any) => { 
         let e = error.error;
         this.registerError = e;
 				this.loading_register = false;
 
-			})*/
+			})
     }
     
     return false;

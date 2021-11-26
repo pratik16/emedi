@@ -10,19 +10,20 @@ import { UserService } from 'src/app/services/users/user.service';
 })
 export class MarketLayoutComponent implements OnInit {
   searchText: string = '';
-  isLoggedIn: boolean = false;
+  //isLoggedIn: boolean = false;
 
-  constructor(private router: Router, private route: ActivatedRoute, private user: UserService) { }
+  constructor(private router: Router, private route: ActivatedRoute, public user: UserService) { }
 
   ngOnInit(): void {
     //localStorage.setItem("token", "Smith");
 //jconsole.log("hi");
+console.log("call....");
     let token = localStorage.getItem("token");
     if (token && token.length > 0) {
-      this.isLoggedIn = true;
+      this.user.isLoggedIn = true;
     }
     else {
-      this.isLoggedIn = false;
+      this.user.isLoggedIn = false;
     }
   }
 
@@ -34,13 +35,15 @@ export class MarketLayoutComponent implements OnInit {
 
   doLogout():void {
     localStorage.removeItem("token");
-    this.isLoggedIn = false;
+    this.user.isLoggedIn = false;
+    this.router.navigate(["auth/login"])
+    
   }
 
   doLogin():void {
     //this.user.login();
     localStorage.setItem("token", "test123");
-    this.isLoggedIn = true;
+    this.user.isLoggedIn = true;
   }
 
 }

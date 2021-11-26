@@ -15,8 +15,7 @@
         <input class="form-control form-textbox nav-item navitem-search" placeholder="Search any product" #searchText>
         <button class="btn btn-outline-success nav-item" type="button" (click)="onSearch(searchText.value)">Search</button>
     </form>
-
-    <ul class="nav bottom-nav-right" *ngIf="isLoggedIn == false">
+    <ul class="nav bottom-nav-right" *ngIf="user.isLoggedIn == false">
         <li class="nav-item nav-item-inline">
             &nbsp;
         </li>
@@ -25,7 +24,7 @@
         </li>
     </ul>
 
-    <ul class="nav bottom-nav-rights" *ngIf="isLoggedIn == true">
+    <ul class="nav bottom-nav-rights" *ngIf="user.isLoggedIn == true">
         <li class="nav-item nav-item-inline">
             &nbsp;
         </li>
@@ -34,7 +33,7 @@
         </li>
     </ul>
 
-    <ul class="nav bottom-nav-right" *ngIf="isLoggedIn == false">
+    <ul class="nav bottom-nav-right" *ngIf="user.isLoggedIn == false">
         <li class="nav-item nav-item-inline">
             <a class="nav-link" routerLink="auth/login">Login</a>
         </li>
@@ -43,7 +42,7 @@
         </li>
     </ul>
 
-    <ul class="nav bottom-nav-rights" *ngIf="isLoggedIn == true">
+    <ul class="nav bottom-nav-rights" *ngIf="user.isLoggedIn == true">
         <li class="nav-item nav-item-inline">
             <a class="nav-link" href="#" (click)="doLogout()">Logout</a>
         </li>

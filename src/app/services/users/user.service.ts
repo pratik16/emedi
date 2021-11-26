@@ -18,7 +18,9 @@ export class UserService {
 	apiUrl:any;
 	url:any;
 	headers:any;
+	isLoggedIn : boolean = false;
 
+	
 
 	private _allUser = new BehaviorSubject<Object>([]);
 	$_allUser: Observable<any> = this._allUser.asObservable();
@@ -39,7 +41,7 @@ export class UserService {
 			  this._allUser.next(res);
 			}
 		  );*/
-		//return this.http.post(this.url('auth/register'), args);//((response:Response) => {return response.json()});
+		return this.http.post(this.url('auth/register'), args);//((response:Response) => {return response.json()});
 	}
 
 	config() {
@@ -47,15 +49,15 @@ export class UserService {
 		});
 	}
 
+	// login(args:any){
+	// 	return this.http.get(this.apiUrl('auth/login'), args);//.map((response:Response) => {return response.json()});
+	// }
+
 	login(args:any){
-		return this.http.get(this.apiUrl('auth/login'), args);//.map((response:Response) => {return response.json()});
+		return this.http.post(this.url('auth/login'), args);//.map((response:Response) => {return response.json()});
 	}
 
-	/*login(args:any){
-		return this.http.post(this.apiUrl('auth/login'), args);//.map((response:Response) => {return response.json()});
-	}
-
-	register(args:any){
+	/*register(args:any){
 		return this.http.post(this.apiUrl('auth/register'), args);//.map((response:Response) => {return response.json()});
 	}
 
