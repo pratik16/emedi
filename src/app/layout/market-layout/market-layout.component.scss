@@ -52,9 +52,11 @@
 
 .fixed-bottom {
     height: 5%;
+    margin-bottom: 0;
 }
 
 .nav-bottom {
+    height: 55px;
     .justify-content-center {
         padding-top: 0;
     }
@@ -63,7 +65,10 @@
 	color: blanchedalmond;
 	border-color:blanchedalmond;
 }
-
+.nav-item-inline{
+    display: flex;
+    align-items: center;
+}
 
 /*Login page*/
 /* STRUCTURE */
@@ -115,4 +120,36 @@
         margin-top: 300px;
     }
 
+  }
+
+  @media screen and (min-width: 320px) and (max-width:568px) {
+    .bottom-nav-right{
+        align-items: center;
+        justify-content: center;
+        flex-wrap: inherit;
+    }
+    .nav-link{
+        padding: 0px 10px 0px 0px;
+    }
+    .nav-item-inline{
+        display: block;
+    white-space: nowrap;
+    }
+    .navbar-dark .navbar-brand{
+        display: none;
+    }
+    .fixed-top{
+        flex-wrap: inherit;
+        padding-left: 10px;
+    }
+    .form-textbox{
+        width: 59%;
+       margin-right: 0px;
+    }
+    .fixed-bottom{
+        padding: 0;
+    }
+    .btn-outline-success{
+        display: none;
+    }
   }
