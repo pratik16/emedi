@@ -17,6 +17,7 @@ import { UserService } from './services/users/user.service';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +30,7 @@ import { UserService } from './services/users/user.service';
     BrowserAnimationsModule,
     FontAwesomeModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule   
     
   ],
   providers: [
