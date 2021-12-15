@@ -1,16 +1,20 @@
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
         <div class="item active  h-80">
-            <img src="./assets/EMediMarket_home_a.png" alt="Los Angeles" style="width:100%;">
+            <img src="./assets/EMediMarket_2.png" alt="Emedimarket" style="width:100%;">
         </div>
 
         <div class="item h-80">
+            <img src="./assets/Em_2.png" alt="Emedimarket" style="width:100%;">
+        </div>
+
+        <!-- <div class="item h-80">
             <img src="https://cdn.won.world/category/2020/12/31/won-world-648421efdddeef1545271a690872a915.jpg" alt="Chicago" style="width:100%;">
         </div>
 
         <div class="item h-80">
             <img src="https://cdn.won.world/category/2020/12/30/won-world-7145b87653ee5a729ff67d6c6000c765.jpg" alt="New york" style="width:100%;">
-        </div>
+        </div> -->
     </div>
 
     <a class="left carousel-control" href="#myCarousel" data-slide="prev">
@@ -63,7 +67,7 @@
                 <h2>Products</h2>
                 <main>
                     <div class="container-fluid bg-trasparent my-4 p-3" style="position: relative;">
-                        <div class="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4 g-3">
+                        <div class="row product-list-card row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4 g-3">
                             <a class="card card-product" *ngFor="let product of productList" routerLink="/{{product.id}}" target="_blank">
                                 <img src="{{ product.img }}" class="card-img-top" appImage/>
                                 <div class="card-body">

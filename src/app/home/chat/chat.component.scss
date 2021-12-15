@@ -1,0 +1,93 @@
+.main {
+    margin-top: 10%;
+    .chat-box-div{
+        border: 1px solid #D12A2A;
+        padding: 25px;
+        width: 80%;
+        margin: 0 auto;
+        .inner-chat-box{
+            .card{
+                margin-top: 2%;
+            }
+        }
+    }
+}
+.heading-div{
+    h2{
+        margin: 0;
+    }
+}
+.line{
+    width: 70px;
+    height: 4px;
+    background: #D12A2A;
+    border-radius: 100px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    -ms-border-radius: 100px;
+    -o-border-radius: 100px;
+}
+
+
+.chat-online {
+    color: #34ce57
+}
+
+.chat-offline {
+    color: #e4606d
+}
+
+.chat-messages {
+    display: flex;
+    flex-direction: column;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.chat-message-left {
+    margin-right: auto
+}
+
+.chat-message-right {
+    margin-left: auto
+}
+.py-3 {
+    padding-top: 1rem!important;
+    padding-bottom: 1rem!important;
+}
+.px-4 {
+    padding-right: 1.5rem!important;
+    padding-left: 1.5rem!important;
+}
+.flex-grow-0 {
+    flex-grow: 0!important;
+}
+.border-top {
+    border-top: 1px solid #dee2e6!important;
+}
+.chat-input{
+font-size: 14px;
+}
+.s-btn{
+    font-size: 14px;
+    background-color: #D12A2A;
+    border: 0;
+    padding: 0px 20px;
+}
+.ct-right{
+float: right;
+}
+.ct-left{
+    float: left;
+}
+.c-user{
+font-weight: bold;
+}
+@media screen and (min-width: 320px) and (max-width:568px) {
+    .main .chat-box-div{
+        width: 100%;
+        margin: 0px;
+        border: 0;
+    }
+    
+}

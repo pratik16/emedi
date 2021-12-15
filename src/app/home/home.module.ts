@@ -9,6 +9,7 @@ import { ProductListingComponent } from './product-listing/product-listing.compo
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { ProductSearchComponent } from './product-search/product-search.component';
 import { MaterialModule } from '../material/material.module';
+import { ChatComponent } from './chat/chat.component'
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { MaterialModule } from '../material/material.module';
     ImageplaceholderDirective,
     ProductListingComponent,
     ProductDetailComponent,
-    ProductSearchComponent
+    ProductSearchComponent,
+    ChatComponent
   ],
   imports: [
     CommonModule,

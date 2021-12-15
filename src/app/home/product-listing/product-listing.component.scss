@@ -62,3 +62,23 @@ main .card:hover {
         margin-bottom: 10px;
     }
 }
+
+
+@media screen and (min-width: 320px) and (max-width:568px) {
+    .card-product{
+        width: 100%;
+    }
+    .product-list-card{
+        justify-content: center;
+    }
+    .col-md-auto{
+        .card{
+            .card-body{
+                display: none;
+            }
+        }
+    }
+    .col-md-auto{
+        display: none;
+    }
+}
