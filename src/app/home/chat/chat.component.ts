@@ -20,25 +20,24 @@ export class ChatComponent implements OnInit {
   constructor(private router: Router, private route: ActivatedRoute, private chatService : ChatService) { }
 
   ngOnInit(): void {
-
-
     setInterval(()=>{
       this.chatService.config().subscribe((data:any) => {
         console.log("data  ==?", data);
         if(data && data.data && data.data.data){
           this.receiver_contact_id = data.data.data[0].sender_contact_id;
           this.msgList = data.data.data.reverse();
-
           this.msgList.forEach((element : any) => {
-            element.created_at =  new Date(element.created_at).toLocaleString()
+            var indianTimeZoneVal = new Date(element.created_at).toLocaleString('en-US', {timeZone: 'Asia/Kolkata'});
+            var indainDateObj = new Date(indianTimeZoneVal);
+            indainDateObj.setHours(indainDateObj.getHours() + 5);
+            indainDateObj.setMinutes(indainDateObj.getMinutes() + 30);
+            element.created_at = indainDateObj.toLocaleTimeString();
+            console.log(indainDateObj);
+            
           });
-        console.log("this.receiver_contact_id  ==?", this.receiver_contact_id);
         }      
       });
     },5000)
-
-    
-    
   }
 
   ngAfterViewInit() {
@@ -48,8 +47,14 @@ export class ChatComponent implements OnInit {
   ngOnDestroy() {
     
   }
+  onEnter() {
+    this.sendMessage();
+  }
 
   sendMessage(){
+    if(this.msg !== undefined && this.msg !== "" && this.msg !== null){
+
+    
     let obj = {
       msgId: Math.floor(Math.random() * 1000000000),
       device_key: null,
@@ -59,12 +64,15 @@ export class ChatComponent implements OnInit {
     }
 
     this.chatService.sendMessage(obj).subscribe((data:any) => {
+      this.msg = "";
 			console.log("data  ==?", data);
       this.receiver_contact_id = data.data[0].reciver_contact_id;
 
       console.log("this.receiver_contact_id  ==?", this.receiver_contact_id);
 		});
-
+  }else{
+   return;   
+  }
   }
 
 
