@@ -44,13 +44,12 @@ export class LoginComponent implements OnInit {
       this.flag = true;
 			this.loading_register = true;
 			let args = this.loginForm.value;
-      console.log("args  ===?", args);
 			//args.password_confirmation = args.password;
 			this.userService.login(args).subscribe((data: any) => {
         let success = data;
-        console.log(success);
-        if(success && success.token)
+        if(success && success.token && success.user)
         {
+          localStorage.setItem("emedi_chat_contact_id", success.user.emedi_chat_contact_id);
           localStorage.setItem("token", success.token);
           this.router.navigate(["/"]);
           this.userService.isLoggedIn = true;

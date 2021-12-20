@@ -17,18 +17,13 @@ export class ChatService {
    
    private _url = global.api_url;
    
-   config() {
-    
-    console.log("token  ==?", this.token);
+   getChatMessage() {
 		return this.http.get(this._url+'chat/message', { headers : {
       "authorization" :  "Bearer"+this.token}
     });
 	}
 
   sendMessage(msgObj : any){
-
-    console.log("msgObj  ===?", msgObj);
-    
     return this.http.post(this._url+'chat/message', msgObj, { headers : {
       "authorization" :  "Bearer"+this.token}
     });

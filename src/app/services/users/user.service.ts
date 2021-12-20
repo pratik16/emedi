@@ -19,7 +19,6 @@ export class UserService {
 	url:any;
 	headers:any;
 	isLoggedIn : boolean = false;
-
 	
 
 	private _allUser = new BehaviorSubject<Object>([]);
