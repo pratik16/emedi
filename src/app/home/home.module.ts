@@ -11,7 +11,7 @@ import { ProductSearchComponent } from './product-search/product-search.componen
 import { MaterialModule } from '../material/material.module';
 import { ChatComponent } from './chat/chat.component'
 
-
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     HomeComponent,
@@ -21,12 +21,13 @@ import { ChatComponent } from './chat/chat.component'
     ProductListingComponent,
     ProductDetailComponent,
     ProductSearchComponent,
-    ChatComponent
+    ChatComponent,
   ],
   imports: [
     CommonModule,
     HomeRoutingModule,
-    MaterialModule
+    MaterialModule,
+    FormsModule
   ],
   providers : [
     

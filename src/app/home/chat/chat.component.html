@@ -13,51 +13,45 @@
                 <div class="row g-0">
                     <div class="col-12">
                         <div class="py-2 px-4 border-bottom">
-                                <div class="">
-                                    <strong>Sharon Lessman</strong>
-                                    <div class="text-muted small"><em>Typing...</em></div>
-                                </div>
+                            <div class="">
+                                <strong>Sharon Lessman</strong>
+                                <div class="text-muted small"><em>Typing...</em></div>
+                            </div>
                         </div>
 
                         <div class="position-relative">
                             <div class="chat-messages p-4">
 
-                                <div class="chat-message-right pb-4">
-                                    <div class="bg-light rounded py-2 px-3 mr-3">
-                                        <div class="c-user mb-1">You</div>
-                                        Lorem ipsum dolor sit amet, vis erat denique in, dicunt prodesset te vix.
-                                    </div>
-                                    <div>
-                                        <div class="text-muted small text-nowrap mt-2 ct-right">2:33 am</div>
-                                    </div>
-                                </div>
+                                <ng-container *ngFor="let item of msgList">
 
-                                <div class="chat-message-left pb-4">
-                                    <div class="flex-shrink-1 bg-light rounded py-2 px-3 ml-3">
-                                        <div class="c-user mb-1">Sharon Lessman</div>
-                                        Sit meis deleniti eu, pri vidit meliore docendi ut, an eum erat animal commodo.
-                                    </div>
-                                    <div>
-                                        <div class="text-muted small text-nowrap mt-2 ct-left">2:34 am</div>
-                                    </div>
-                                </div>
 
-                                <div class="chat-message-right mb-4">
-                                    <div class="flex-shrink-1 bg-light rounded py-2 px-3 mr-3">
-                                        <div class="c-user mb-1">You</div>
-                                        Cum ea graeci tractatos.
+                                    <div class="chat-message-right pb-4" *ngIf="item.reciver_contact_id == 98">
+                                        <div class="bg-light rounded py-2 px-3 mr-3">
+                                            <div class="c-user mb-1">You</div>
+                                            {{item.body}}
+                                        </div>
+                                        <div>
+                                            <div class="text-muted small text-nowrap mt-2 ct-right">{{item.created_at}}</div>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <div class="text-muted small text-nowrap mt-2 ct-right">2:35 am</div>
+
+                                    <div class="chat-message-left pb-4" *ngIf="item.reciver_contact_id == 97">
+                                        <div class="flex-shrink-1 bg-light rounded py-2 px-3 ml-3">
+                                            <div class="c-user mb-1">Sharon Lessman</div>
+                                            {{item.body}}
+                                        </div>
+                                        <div>
+                                            <div class="text-muted small text-nowrap mt-2 ct-left">{{item.created_at}}</div>
+                                        </div>
                                     </div>
-                                </div>
+                                </ng-container>
                             </div>
                         </div>
 
                         <div class="flex-grow-0 py-3 px-4 border-top">
                             <div class="input-group">
-                                <input type="text" class="form-control chat-input" placeholder="Type your message">
-                                <button class="btn btn-primary s-btn">Send</button>
+                                <input class="form-control chat-input" (keyup.enter)="onEnter()" [(ngModel)]="msg" placeholder="Type your message">
+                                <button class="btn btn-primary s-btn" (click)="sendMessage()">Send</button>
                             </div>
                         </div>
 

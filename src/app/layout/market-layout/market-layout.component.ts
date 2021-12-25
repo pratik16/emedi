@@ -17,7 +17,6 @@ export class MarketLayoutComponent implements OnInit {
   ngOnInit(): void {
     //localStorage.setItem("token", "Smith");
 //jconsole.log("hi");
-console.log("call....");
     let token = localStorage.getItem("token");
     if (token && token.length > 0) {
       this.user.isLoggedIn = true;
@@ -35,6 +34,7 @@ console.log("call....");
 
   doLogout():void {
     localStorage.removeItem("token");
+    localStorage.removeItem("emedi_chat_contact_id")
     this.user.isLoggedIn = false;
     this.router.navigate(["auth/login"])
     
