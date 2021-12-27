@@ -11,16 +11,16 @@ export class ChatService {
   token : any = localStorage.getItem("token");
   constructor(private http: HttpClient) {
     this.headers = new Headers();
-		this.headers.append('Access-Control-Allow-Origin', '*');    
+		this.headers.append('Access-Control-Allow-Origin', '*'); 
+       
    }
    
    
    private _url = global.api_url;
    
-   getChatMessage() {
-		return this.http.get(this._url+'chat/message', { headers : {
-      "authorization" :  "Bearer"+this.token}
-    });
+   getChatMessage(id:any) {
+     let option = { headers : {"authorization" :  "Bearer"+this.token}, params : {'contact_id' : id}};
+    return this.http.get(this._url+'chat/message',  option);
 	}
 
   sendMessage(msgObj : any){

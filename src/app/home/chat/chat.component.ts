@@ -14,7 +14,8 @@ export class ChatComponent implements OnInit {
   receiver_contact_id : number = 0;
   msg : string = "";
   msgList : any = [];
-  chatReciverId = localStorage.getItem("emedi_chat_contact_id");
+  chatReciverId : any;
+
   @HostListener('window:resize', ['$event'])
   onResize() {
   }
@@ -26,8 +27,10 @@ export class ChatComponent implements OnInit {
     private userService: UserService) { }
 
   ngOnInit(): void {
+    this. chatReciverId =  localStorage.getItem("emedi_chat_contact_id");
     setInterval(()=>{
-      this.chatService.getChatMessage().subscribe((data:any) => {
+
+      this.chatService.getChatMessage(this.chatReciverId).subscribe((data:any) => {
         if(data && data.data && data.data.data){
           this.msgList = data.data.data.reverse();
           this.msgList.forEach((element : any) => {
@@ -64,7 +67,7 @@ export class ChatComponent implements OnInit {
     }
     this.chatService.sendMessage(obj).subscribe((data:any) => {
       this.msg = "";
-		  this.receiver_contact_id = data.data[0].reciver_contact_id;
+		  this.receiver_contact_id = data?.data[0]?.reciver_contact_id;
   	});
   }else{
    return;   

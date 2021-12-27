@@ -25,7 +25,7 @@
                                 <ng-container *ngFor="let item of msgList">
 
 
-                                    <div class="chat-message-right pb-4" *ngIf="item.reciver_contact_id == 98">
+                                    <div class="chat-message-right pb-4" *ngIf="item.reciver_contact_id != chatReciverId">
                                         <div class="bg-light rounded py-2 px-3 mr-3">
                                             <div class="c-user mb-1">You</div>
                                             {{item.body}}
@@ -35,7 +35,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="chat-message-left pb-4" *ngIf="item.reciver_contact_id == 97">
+                                    <div class="chat-message-left pb-4" *ngIf="item.reciver_contact_id == chatReciverId">
                                         <div class="flex-shrink-1 bg-light rounded py-2 px-3 ml-3">
                                             <div class="c-user mb-1">Sharon Lessman</div>
                                             {{item.body}}
