@@ -16,7 +16,7 @@
             <a class="btn btn-primary">Call us on 91-6351500990</a>
         </div>
 
-        <div class="card-body">
+        <div class="card-body"  *ngIf="loggedIn == true">
             <a routerLink="/chat" class="">Click here to chat <img src="/assets/icons8-chat-room-50.png" height="40px" class="logo-img" /> </a>
         </div>
 

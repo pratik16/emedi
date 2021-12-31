@@ -14,10 +14,16 @@ export class ProductDetailComponent implements OnInit {
   prodId: string | null = '';
   productDetailStoreEvent: any;
   productDetail: any;
+  loggedIn: boolean = false;
 
   constructor(private router: Router, private route: ActivatedRoute, public product: ProductService) { }
 
   ngOnInit(): void {
+
+    let token = localStorage.getItem("token");
+    if (token && token.length > 0) {
+      this.loggedIn = true;
+    }
    // this.router.routeReuseStrategy.shouldReuseRoute = () => false;
     this.routerEvent = this.route.paramMap.subscribe(paramMap => {
       this.prodId = paramMap.get('prod_id');
