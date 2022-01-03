@@ -47,9 +47,12 @@ export class LoginComponent implements OnInit {
 			//args.password_confirmation = args.password;
 			this.userService.login(args).subscribe((data: any) => {
         let success = data;
+
+        console.log("test login", success)
         if(success && success.token && success.user)
         {
           localStorage.setItem("emedi_chat_contact_id", success.user.emedi_chat_contact_id);
+          localStorage.setItem("emedi_chat_contact_name", success.user.emedi_chat_contact_name);
           localStorage.setItem("token", success.token);
           this.router.navigate(["/"]);
           this.userService.isLoggedIn = true;

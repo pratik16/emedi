@@ -15,6 +15,7 @@ export class ChatComponent implements OnInit {
   msg : string = "";
   msgList : any = [];
   chatReciverId : any;
+  emediChatContactName: any;
 
   @HostListener('window:resize', ['$event'])
   onResize() {
@@ -28,6 +29,7 @@ export class ChatComponent implements OnInit {
 
   ngOnInit(): void {
     this. chatReciverId =  localStorage.getItem("emedi_chat_contact_id");
+    this.emediChatContactName = localStorage.getItem("emedi_chat_contact_name");
     setInterval(()=>{
 
       this.chatService.getChatMessage(this.chatReciverId).subscribe((data:any) => {
