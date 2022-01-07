@@ -68,10 +68,18 @@
                 <a class="nav-link" target="_blank" href="http://seller.emedimarket.com/">EMedimarket</a>
             </li>
             <li class="nav-item">
-                <mat-icon class="nav-link phone-color">phone</mat-icon>
+                <a class="nav-link" href="#">
+                    <mat-icon class="nav-link phone-color">phone</mat-icon>
+                </a>
+
             </li>
             <li class="nav-item nav-item-inline phone-text">
                 <a class="nav-link" href="#">91-6351500990</a>
+            </li>
+            <li class="nav-item" *ngIf="user.isLoggedIn">
+                <a class="nav-link" routerLink="/chat">
+                    <mat-icon class="nav-link chat-text">comment</mat-icon>
+                </a>
             </li>
         </ul>
     </nav>

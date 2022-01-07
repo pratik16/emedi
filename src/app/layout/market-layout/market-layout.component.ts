@@ -34,7 +34,8 @@ export class MarketLayoutComponent implements OnInit {
 
   doLogout():void {
     localStorage.removeItem("token");
-    localStorage.removeItem("emedi_chat_contact_id")
+    localStorage.removeItem("emedi_chat_contact_id");
+    localStorage.removeItem("emedi_chat_contact_name");
     this.user.isLoggedIn = false;
     this.router.navigate(["auth/login"])
     
